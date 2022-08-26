@@ -13,9 +13,12 @@ function init() {
   clearButton.addEventListener("click", clearFields);
 }
 function clearFields() {
-  firstString = "";
-  secondString = "";
-  document.querySelector;
+  //removes values
+  document.querySelector("#firstnumber").value = "";
+  document.querySelector("#secondnumber").value = "";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("decimals").value = "";
+  document.querySelector("#doround").checked = false;
 }
 function calculating() {
   //reading operator and input strings
@@ -47,7 +50,8 @@ function calculating() {
     const decimals = document.getElementById("decimals").value;
     console.log(decimals);
     resultRounded = result.toFixed(decimals);
-    console.log("result", result);
+    //first number also gets rounded
+    document.getElementById("firstnumber").value = resultRounded;
     appendRounded();
   } else {
     appendNumber();
@@ -60,7 +64,6 @@ function appendNumber() {
   resultList.append(li);
   resultList.scrollTo(0, 1000000);
 }
-
 function appendRounded() {
   let li = document.createElement("li");
   li.textContent = resultRounded;
