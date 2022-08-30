@@ -19,6 +19,7 @@ function clearFields() {
   document.getElementById("results").innerHTML = "";
   document.getElementById("decimals").value = "";
   document.querySelector("#doround").checked = false;
+  //while (resultList.hasChildNodes()){resultList.removeChild(resultList.firstChild)}
 }
 function calculating() {
   //reading operator and input strings
